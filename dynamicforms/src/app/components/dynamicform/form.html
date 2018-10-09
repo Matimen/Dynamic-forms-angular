@@ -1,0 +1,34 @@
+<form class="column" [formGroup]="form" (ngSubmit)="onSubmitForm()">
+    <mat-form-field>
+        <input matInput placeholder="Imię" type="text" formControlName="name" required>
+
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Nazwisko" type="text" formControlName="surname" required>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="E-mail" type="email" formControlName="email" required>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Numer telefonu" type="text"
+               formControlName="number" required>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-select placeholder="Wybierz" formControlName="select" required>
+            <mat-option value="Jeden">Jeden</mat-option>
+            <mat-option value="Dwa">Dwa</mat-option>
+            <mat-option value="Trzy">Trzy</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker" formControlName="data" placeholder="Wybierz date" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <div class="buttons text-right">
+        <button class="mr-1" mat-raised-button (click)="onResetForm()">Wyczyść</button>
+        <button mat-raised-button>Zapisz</button>
+    </div>
+</form>

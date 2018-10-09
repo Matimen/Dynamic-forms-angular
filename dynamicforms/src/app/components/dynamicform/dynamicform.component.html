@@ -1,8 +1,30 @@
 <div class="container content">
-  <div class="row">
-    <div class="col-md-12">
-      <h3>Form</h3>
-      <!--Tu formularz za pomocą buildera-->
+    <div class="row p-4">
+        <div class="col-md-12">
+            <h3>Form</h3>
+            <p>Dynamiczne tworzenie formularza</p>
+            <form [formGroup]="form" (ngSubmit)="onSubmitForm()" *ngFor="let input of inputs"
+                  [ngSwitch]="input.value.type">
+                <mat-form-field *ngSwitchCase="'text'">
+                    <input matInput [formControlName]="input.value.name" [type]="input.value.type"
+                           [placeholder]="input.value.placeholder">
+                </mat-form-field>
+                <mat-form-field *ngSwitchCase="'email'">
+                    <input matInput [formControlName]="input.value.name" [type]="input.value.type"
+                           [placeholder]="input.value.placeholder">
+                </mat-form-field>
+                <mat-form-field *ngSwitchCase="'select'">
+                    <mat-select placeholder="Wybierz" required>
+                        <mat-option value="Jeden">Jeden</mat-option>
+                        <mat-option value="Dwa">Dwa</mat-option>
+                        <mat-option value="Trzy">Trzy</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div class="buttons mt-4" *ngSwitchCase="'button'">
+                    <button class="mr-1" mat-raised-button (click)="onResetForm()">Wyczyść</button>
+                    <button mat-raised-button type="submit">Zapisz</button>
+                </div>
+            </form>
+        </div>
     </div>
-  </div>
 </div>

@@ -1,0 +1,31 @@
+[
+  {
+    "type": "text",
+    "label": "First name",
+    "name": "firstName",
+    "placeholder": "First name"
+  },  {
+    "type": "text",
+    "label": "Last name",
+    "name": "lastName",
+    "placeholder": "Last name"
+  },
+  {
+    "type": "email",
+    "label": "Email",
+    "name": "E-mail",
+    "placeholder": "E-mail"
+  },
+  {
+    "type": "select",
+    "label": "Favourite food",
+    "name": "food",
+    "options": ["Pizza", "Hot Dogs"],
+    "placeholder": "Select an option"
+  },
+  {
+    "label":  "Submit",
+    "name":  "submit",
+    "type": "button"
+  }
+  ]
